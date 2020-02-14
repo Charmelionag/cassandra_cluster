@@ -1,0 +1,14 @@
+Host cassandra-1
+  User root
+  Hostname 172.19.0.10
+  StrictHostKeyChecking no
+
+Host cassandra-2
+  User root
+  Hostname 172.19.0.11
+  StrictHostKeyChecking no
+
+Host cassandra-3
+  User root
+  Hostname 172.19.0.12
+  StrictHostKeyChecking no

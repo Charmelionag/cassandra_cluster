@@ -1,0 +1,35 @@
+version: '3'
+services:
+  cassandra-1:
+    environment:
+      - ID=1
+      - WAIT=0
+    image: cassandra:4
+    networks:
+      cas-net:
+        ipv4_address: 172.19.0.10
+
+  cassandra-2:
+    environment:
+      - ID=2
+      - WAIT=60
+    image: cassandra:4
+    networks:
+      cas-net:
+        ipv4_address: 172.19.0.11
+
+  cassandra-3:
+    environment:
+      - ID=3
+      - WAIT=120
+    image: cassandra:4
+    networks:
+      cas-net:
+        ipv4_address: 172.19.0.12
+
+networks:
+  cas-net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/24
